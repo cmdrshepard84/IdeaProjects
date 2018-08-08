@@ -1,11 +1,17 @@
 package com.Ganzel;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String [] args){
+        //Input a name to search for
+        Scanner scan = new Scanner(System.in);
+        String scanString;
+        System.out.println("Please enter a name to search for:");
+        scanString = scan.nextLine();
         // Create the ContactsManager object
         ContactsManager myContactManager = new ContactsManager();
-
         //Create a new Contact object
+
         Contact friendMary = new Contact();
         friendMary.name = "Mary";
         friendMary.phoneNumber = "7155720601";
@@ -30,7 +36,7 @@ public class Main {
         myContactManager.addContact(friendBob);
 
         //Search for a Contact
-        Contact result = myContactManager.searchContact("Lorelai");
+        Contact result = myContactManager.searchContact(scanString);
         System.out.println(result.name + " " + result.phoneNumber + " " +result.email);
     }
 }
